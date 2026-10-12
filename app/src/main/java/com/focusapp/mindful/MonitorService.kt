@@ -128,11 +128,28 @@ class MonitorService : Service() {
         while (events.hasNextEvent()) {
             events.getNextEvent(event)
             @Suppress("DEPRECATION")
-            if (event.eventType == UsageEvents.Event.MOVE_TO_FOREGROUND) {
+            if (event.eventType == UsageEvents.Event.MOVE_TO_FOREGROUND &&
+                isSwitchTarget(event.packageName)
+            ) {
                 currentApp = event.packageName
             }
         }
         lastEventQuery = end
+    }
+
+    private val switchTargetCache = mutableMapOf<String, Boolean>()
+
+    /**
+     * Whether opening [pkg] means the user moved to a different app. Screens from
+     * packages without a launcher icon (Google sign-in, share sheets, permission
+     * dialogs) run on behalf of the app underneath, so they don't end its session.
+     */
+    private fun isSwitchTarget(pkg: String): Boolean = switchTargetCache.getOrPut(pkg) {
+        pkg == packageName ||
+            packageManager.getLaunchIntentForPackage(pkg) != null ||
+            packageManager.queryIntentActivities(
+                Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).setPackage(pkg), 0
+            ).isNotEmpty()
     }
 
     private fun showFocusScreen(minutes: Int) {
