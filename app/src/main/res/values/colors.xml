@@ -1,0 +1,7 @@
+<resources>
+    <color name="focus_bg">#101820</color>
+    <color name="focus_text">#F2EDE4</color>
+    <color name="focus_muted">#9AA5B1</color>
+    <color name="accent">#4FB3A9</color>
+    <color name="stats_bg">#1A4FB3A9</color>
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string-array name="quotes">
+        <item>“Starve your distractions, feed your focus.”\n— Unknown</item>
+        <item>“The successful warrior is the average man, with laser-like focus.”\n— Bruce Lee</item>
+        <item>“Where focus goes, energy flows.”\n— Tony Robbins</item>
+        <item>“You can do anything, but not everything.”\n— David Allen</item>
+        <item>“It is not that we have a short time to live, but that we waste a lot of it.”\n— Seneca</item>
+        <item>“Concentrate all your thoughts upon the work at hand. The sun’s rays do not burn until brought to a focus.”\n— Alexander Graham Bell</item>
+        <item>“The key is not to prioritize what’s on your schedule, but to schedule your priorities.”\n— Stephen Covey</item>
+        <item>“What you stay focused on will grow.”\n— Roy T. Bennett</item>
+        <item>“Almost everything will work again if you unplug it for a few minutes, including you.”\n— Anne Lamott</item>
+        <item>“Lack of direction, not lack of time, is the problem. We all have twenty-four hour days.”\n— Zig Ziglar</item>
+        <item>“Distraction is the enemy of vision.”\n— Unknown</item>
+        <item>“The shorter way to do many things is to do only one thing at a time.”\n— Mozart</item>
+        <item>“Be where you are; otherwise you will miss your life.”\n— Buddha</item>
+        <item>“Your phone has no idea how much your time is worth. You do.”\n— Unknown</item>
+        <item>“Focus on being productive instead of busy.”\n— Tim Ferriss</item>
+        <item>“Attention is the rarest and purest form of generosity.”\n— Simone Weil</item>
+        <item>“The scroll never ends. Your day does.”\n— Unknown</item>
+    </string-array>
+</resources>

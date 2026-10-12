@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Focus</string>
+    <string name="choose_apps">Choose apps</string>
+    <string name="tagline">A gentle pause when your phone starts pulling you in.</string>
+    <string name="permissions_header">Permissions</string>
+    <string name="grant_usage">Grant Usage Access</string>
+    <string name="grant_overlay">Allow display over other apps</string>
+    <string name="battery_btn">Keep running in the background</string>
+    <string name="battery_hint">Optional. Find Focus in the list and choose \"Don\'t optimize\" so your phone doesn\'t stop reminders.</string>
+    <string name="granted">✓ Granted</string>
+    <string name="settings_header">Settings</string>
+    <string name="limit_label">Show the focus screen after (minutes of continuous use)</string>
+    <string name="pause_label">Pause length before you can continue (seconds)</string>
+    <string name="enable">Focus reminders</string>
+    <string name="preview">Preview focus screen</string>
+    <string name="watching_all">Watching: all phone usage (pick apps to narrow it down)</string>
+    <plurals name="watching_n">
+        <item quantity="one">Watching: %d selected app</item>
+        <item quantity="other">Watching: %d selected apps</item>
+    </plurals>
+    <string name="stats_today">Today: %1$s · %2$s</string>
+    <plurals name="stats_pauses">
+        <item quantity="one">%d focus pause</item>
+        <item quantity="other">%d focus pauses</item>
+    </plurals>
+    <plurals name="stats_stops">
+        <item quantity="one">put the phone down %d time</item>
+        <item quantity="other">put the phone down %d times</item>
+    </plurals>
+    <string name="need_permissions">Grant both permissions first</string>
+    <string name="continue_btn">Continue anyway</string>
+    <string name="continue_wait">Breathe… %d</string>
+    <string name="done_btn">I\'m done for now</string>
+    <string name="focus_title">Time to refocus</string>
+    <plurals name="focus_used">
+        <item quantity="one">You\'ve been on your phone for %d minute straight.</item>
+        <item quantity="other">You\'ve been on your phone for %d minutes straight.</item>
+    </plurals>
+    <string name="notif_channel">Focus monitor</string>
+    <string name="notif_text">Watching your screen time mindfully</string>
+    <string name="search_apps">Search apps</string>
+    <string name="loading_apps">Loading apps…</string>
+</resources>
