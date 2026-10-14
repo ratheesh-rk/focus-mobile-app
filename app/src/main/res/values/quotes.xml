@@ -18,4 +18,22 @@
         <item>“Attention is the rarest and purest form of generosity.”\n— Simone Weil</item>
         <item>“The scroll never ends. Your day does.”\n— Unknown</item>
     </string-array>
+
+    <!-- Short prompts for random nudges -->
+    <string-array name="nudges">
+        <item>Are you on your phone on purpose right now?</item>
+        <item>Take one slow breath. In… and out.</item>
+        <item>Drop your shoulders. Unclench your jaw.</item>
+        <item>What were you about to do before you picked up your phone?</item>
+        <item>Look up. Find something 20 metres away for 20 seconds.</item>
+        <item>Have you had water recently?</item>
+        <item>Is this scroll making your day better?</item>
+        <item>Sit up straight and stretch for a moment.</item>
+        <item>One thing at a time. What matters most right now?</item>
+        <item>Notice three things you can hear around you.</item>
+        <item>Could this wait until later?</item>
+        <item>You’re doing fine. Put the phone down for a minute.</item>
+        <item>Check in: how are you feeling right now?</item>
+        <item>Your attention is precious. Spend it well.</item>
+    </string-array>
 </resources>

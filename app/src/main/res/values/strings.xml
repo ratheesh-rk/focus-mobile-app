@@ -1,43 +1,87 @@
 <resources>
     <string name="app_name">Focus</string>
-    <string name="choose_apps">Choose apps</string>
     <string name="tagline">A gentle pause when your phone starts pulling you in.</string>
-    <string name="permissions_header">Permissions</string>
-    <string name="grant_usage">Grant Usage Access</string>
-    <string name="grant_overlay">Allow display over other apps</string>
-    <string name="battery_btn">Keep running in the background</string>
-    <string name="battery_hint">Optional. Find Focus in the list and choose \"Don\'t optimize\" so your phone doesn\'t stop reminders.</string>
-    <string name="granted">✓ Granted</string>
-    <string name="settings_header">Settings</string>
-    <string name="limit_label">Show the focus screen after (minutes of continuous use)</string>
-    <string name="pause_label">Pause length before you can continue (seconds)</string>
+
     <string name="enable">Focus reminders</string>
-    <string name="preview">Preview focus screen</string>
-    <string name="watching_all">Watching: all phone usage (pick apps to narrow it down)</string>
+    <string name="status_on_all">Active · watching all phone use</string>
+    <plurals name="status_on_n">
+        <item quantity="one">Active · watching %d app</item>
+        <item quantity="other">Active · watching %d apps</item>
+    </plurals>
+    <string name="status_off">Off</string>
+    <string name="status_need_perms">Allow usage access below to start</string>
+    <string name="status_notif_only">Active · alerts by notification only</string>
+    <string name="stat_pauses">focus pauses today</string>
+    <string name="stat_stops">times you put it down</string>
+
+    <string name="permissions_header">Permissions</string>
+    <string name="grant_usage">Usage access</string>
+    <string name="grant_usage_sub">See which app is on screen</string>
+    <string name="grant_overlay">Display over other apps</string>
+    <string name="grant_overlay_sub">Optional. Shows the full pause on top of YouTube and others, otherwise you get a notification</string>
+    <string name="grant_notifications">Notifications</string>
+    <string name="grant_notifications_sub">Alert at the top of the screen</string>
+    <string name="battery_btn">Run in background</string>
+    <string name="battery_sub">Optional. Choose \"Don\'t optimize\" so your phone doesn\'t stop Focus</string>
+    <string name="chip_allow">Allow</string>
+    <string name="chip_granted">✓ On</string>
+
+    <string name="settings_header">Rhythm</string>
+    <string name="limit_label">Pause after</string>
+    <string name="limit_sub">minutes of continuous use</string>
+    <string name="pause_label">Breathing pause</string>
+    <string name="pause_sub">seconds before you can continue</string>
+    <string name="decrease">Decrease</string>
+    <string name="increase">Increase</string>
+    <string name="choose_apps">Apps to watch</string>
+    <string name="watching_all">All phone use</string>
     <plurals name="watching_n">
-        <item quantity="one">Watching: %d selected app</item>
-        <item quantity="other">Watching: %d selected apps</item>
+        <item quantity="one">%d app selected</item>
+        <item quantity="other">%d apps selected</item>
     </plurals>
-    <string name="stats_today">Today: %1$s · %2$s</string>
-    <plurals name="stats_pauses">
-        <item quantity="one">%d focus pause</item>
-        <item quantity="other">%d focus pauses</item>
-    </plurals>
-    <plurals name="stats_stops">
-        <item quantity="one">put the phone down %d time</item>
-        <item quantity="other">put the phone down %d times</item>
-    </plurals>
-    <string name="need_permissions">Grant both permissions first</string>
-    <string name="continue_btn">Continue anyway</string>
-    <string name="continue_wait">Breathe… %d</string>
-    <string name="done_btn">I\'m done for now</string>
-    <string name="focus_title">Time to refocus</string>
-    <plurals name="focus_used">
-        <item quantity="one">You\'ve been on your phone for %d minute straight.</item>
-        <item quantity="other">You\'ve been on your phone for %d minutes straight.</item>
-    </plurals>
-    <string name="notif_channel">Focus monitor</string>
-    <string name="notif_text">Watching your screen time mindfully</string>
+    <string name="nudges_header">Nudges</string>
+    <string name="nudges_label">Random reminders</string>
+    <string name="nudges_sub">A gentle pop-up at unexpected moments while you use your phone</string>
+    <string name="nudge_every">About every</string>
+    <string name="nudge_every_sub">minutes, never at the same time</string>
+    <string name="nudge_test">Send a test nudge</string>
+    <string name="nudge_test_sub">See what one looks like</string>
+    <string name="preview">Preview focus screen</string>
+    <string name="need_permissions">Allow usage access first</string>
+    <string name="need_overlay">Allow \"Display over other apps\" first</string>
+
+    <string name="picker_title">Apps to watch</string>
+    <string name="picker_sub">Pick none to count all phone use</string>
+    <string name="back">Back</string>
     <string name="search_apps">Search apps</string>
     <string name="loading_apps">Loading apps…</string>
+
+    <string name="focus_title">Time to refocus</string>
+    <plurals name="focus_used">
+        <item quantity="one">%d minute without a break</item>
+        <item quantity="other">%d minutes without a break</item>
+    </plurals>
+    <plurals name="focus_used_app">
+        <item quantity="one">%1$d minute on %2$s without a break</item>
+        <item quantity="other">%1$d minutes on %2$s without a break</item>
+    </plurals>
+    <string name="breathe_in">breathe in</string>
+    <string name="breathe_out">breathe out</string>
+    <string name="continue_btn">Continue anyway</string>
+    <string name="continue_wait">Continue in %d s</string>
+    <string name="done_btn">I\'m done for now</string>
+
+    <string name="notif_channel">Focus status</string>
+    <string name="notif_nudges_only">Random reminders are on</string>
+    <string name="notif_text">Watching your screen time mindfully</string>
+    <string name="notif_progress">%1$s · %2$d of %3$d min</string>
+    <string name="notif_phone">Phone</string>
+    <string name="your_phone">your phone</string>
+    <string name="alert_channel">Focus alerts</string>
+    <string name="nudge_channel">Random nudges</string>
+    <string name="nudge_title">A mindful moment</string>
+    <plurals name="alert_text">
+        <item quantity="one">%1$d minute on %2$s. Take a breath.</item>
+        <item quantity="other">%1$d minutes on %2$s. Take a breath.</item>
+    </plurals>
 </resources>

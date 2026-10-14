@@ -3,15 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:minHeight="56dp"
+    android:minHeight="64dp"
     android:orientation="horizontal"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp">
 
     <ImageView
         android:id="@+id/imgIcon"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:importantForAccessibility="no" />
 
     <TextView
@@ -20,12 +20,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_weight="1"
+        android:textColor="@color/text_primary"
         android:textSize="16sp" />
 
     <CheckBox
         android:id="@+id/check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
+        android:button="@drawable/check_circle"
         android:clickable="false"
         android:focusable="false" />
 </LinearLayout>

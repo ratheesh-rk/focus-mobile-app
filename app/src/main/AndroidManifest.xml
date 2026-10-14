@@ -19,6 +19,11 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent>
+        <!-- Lets us recognise the home screen as leaving an app -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
     </queries>
 
     <application
@@ -40,15 +45,16 @@
         <activity
             android:name=".AppPickerActivity"
             android:exported="false"
-            android:label="@string/choose_apps" />
+            android:label="@string/choose_apps"
+            android:windowSoftInputMode="stateHidden" />
 
         <activity
-            android:name=".FocusActivity"
+            android:name=".DoneActivity"
             android:excludeFromRecents="true"
             android:exported="false"
-            android:launchMode="singleTask"
-            android:taskAffinity="com.focusapp.mindful.focus"
-            android:theme="@style/FocusTheme" />
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.NoDisplay" />
 
         <service
             android:name=".MonitorService"

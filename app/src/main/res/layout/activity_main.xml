@@ -1,125 +1,410 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingStart="20dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="32dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tagline"
-            android:textSize="16sp" />
+            android:layout_marginStart="4dp"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="-0.02"
+            android:text="@string/app_name"
+            android:textColor="@color/text_primary"
+            android:textSize="44sp" />
 
         <TextView
-            android:id="@+id/txtStats"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/stats_bg"
-            android:padding="14dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/tagline"
+            android:textColor="@color/text_muted"
             android:textSize="15sp" />
 
+        <!-- Hero: on/off and today's numbers -->
+        <LinearLayout
+            style="@style/GlassCard"
+            android:layout_marginTop="28dp"
+            android:padding="22dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/enable"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtStatus"
+                        style="@style/RowSubtitle" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchEnabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/enable"
+                    android:thumb="@drawable/switch_thumb"
+                    android:track="@drawable/switch_track" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="18dp"
+                android:background="@color/glass_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtPauses"
+                        style="@style/StatNumber" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/stat_pauses" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtStops"
+                        style="@style/StatNumber"
+                        android:textColor="@color/accent" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/stat_stops" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
         <TextView
-            style="@android:style/TextAppearance.Material.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            style="@style/SectionLabel"
             android:text="@string/permissions_header" />
 
-        <Button
-            android:id="@+id/btnUsage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/grant_usage" />
+        <LinearLayout
+            android:id="@+id/cardPermissions"
+            style="@style/GlassCard">
 
-        <Button
-            android:id="@+id/btnOverlay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/grant_overlay" />
+            <LinearLayout
+                android:id="@+id/rowUsage"
+                style="@style/GlassRow">
 
-        <Button
-            android:id="@+id/btnBattery"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/battery_btn" />
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/grant_usage" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/grant_usage_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/chipUsage"
+                    style="@style/Chip" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:id="@+id/rowOverlay"
+                style="@style/GlassRow">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/grant_overlay" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/grant_overlay_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/chipOverlay"
+                    style="@style/Chip" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:id="@+id/rowNotifications"
+                style="@style/GlassRow">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/grant_notifications" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/grant_notifications_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/chipNotifications"
+                    style="@style/Chip" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:id="@+id/rowBattery"
+                style="@style/GlassRow">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/battery_btn" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/battery_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/chipBattery"
+                    style="@style/Chip" />
+            </LinearLayout>
+        </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/battery_hint"
-            android:textSize="13sp" />
-
-        <TextView
-            style="@android:style/TextAppearance.Material.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            style="@style/SectionLabel"
             android:text="@string/settings_header" />
 
+        <LinearLayout
+            android:id="@+id/cardSettings"
+            style="@style/GlassCard">
+
+            <LinearLayout
+                style="@style/GlassRow"
+                android:background="@null">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/limit_label" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/limit_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnLimitMinus"
+                    style="@style/StepButton"
+                    android:contentDescription="@string/decrease"
+                    android:text="−" />
+
+                <TextView
+                    android:id="@+id/txtLimit"
+                    style="@style/StepValue" />
+
+                <TextView
+                    android:id="@+id/btnLimitPlus"
+                    style="@style/StepButton"
+                    android:contentDescription="@string/increase"
+                    android:text="+" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                style="@style/GlassRow"
+                android:background="@null">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/pause_label" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/pause_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnPauseMinus"
+                    style="@style/StepButton"
+                    android:contentDescription="@string/decrease"
+                    android:text="−" />
+
+                <TextView
+                    android:id="@+id/txtPause"
+                    style="@style/StepValue" />
+
+                <TextView
+                    android:id="@+id/btnPausePlus"
+                    style="@style/StepButton"
+                    android:contentDescription="@string/increase"
+                    android:text="+" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:id="@+id/rowApps"
+                style="@style/GlassRow">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/choose_apps" />
+
+                    <TextView
+                        android:id="@+id/txtWatching"
+                        style="@style/RowSubtitle" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron" />
+            </LinearLayout>
+        </LinearLayout>
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:labelFor="@id/editLimit"
-            android:text="@string/limit_label" />
+            style="@style/SectionLabel"
+            android:text="@string/nudges_header" />
 
-        <EditText
-            android:id="@+id/editLimit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="3" />
+        <LinearLayout
+            android:id="@+id/cardNudges"
+            style="@style/GlassCard">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:labelFor="@id/editPause"
-            android:text="@string/pause_label" />
+            <LinearLayout
+                style="@style/GlassRow"
+                android:background="@null">
 
-        <EditText
-            android:id="@+id/editPause"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="3" />
+                <LinearLayout style="@style/RowText">
 
-        <TextView
-            android:id="@+id/txtWatching"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/nudges_label" />
 
-        <Button
-            android:id="@+id/btnApps"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/choose_apps" />
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/nudges_sub" />
+                </LinearLayout>
 
-        <Switch
-            android:id="@+id/switchEnabled"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/enable"
-            android:textSize="18sp" />
+                <Switch
+                    android:id="@+id/switchNudges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nudges_label"
+                    android:thumb="@drawable/switch_thumb"
+                    android:track="@drawable/switch_track" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                style="@style/GlassRow"
+                android:background="@null">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/nudge_every" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/nudge_every_sub" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnNudgeMinus"
+                    style="@style/StepButton"
+                    android:contentDescription="@string/decrease"
+                    android:text="−" />
+
+                <TextView
+                    android:id="@+id/txtNudge"
+                    style="@style/StepValue" />
+
+                <TextView
+                    android:id="@+id/btnNudgePlus"
+                    style="@style/StepButton"
+                    android:contentDescription="@string/increase"
+                    android:text="+" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:id="@+id/rowTestNudge"
+                style="@style/GlassRow">
+
+                <LinearLayout style="@style/RowText">
+
+                    <TextView
+                        style="@style/RowTitle"
+                        android:text="@string/nudge_test" />
+
+                    <TextView
+                        style="@style/RowSubtitle"
+                        android:text="@string/nudge_test_sub" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron" />
+            </LinearLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnPreview"
-            style="@android:style/Widget.Material.Button.Borderless.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/preview" />
+            style="@style/PillButton"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/glass_pill"
+            android:text="@string/preview"
+            android:textColor="@color/text_primary" />
     </LinearLayout>
 </ScrollView>
