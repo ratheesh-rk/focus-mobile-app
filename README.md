@@ -4,8 +4,11 @@ An Android app that shows a full-screen pause with a quote about focus after you
 
 ## How it works
 
-- **MonitorService** runs in the background and checks every 5 seconds which app is on screen, using Android's Usage Access.
-- After *N minutes* of continuous use, it opens **FocusActivity** on top of the current app with a random quote.
+- **MonitorService** runs in the background and checks every 5 seconds which app is on screen, using Android's Usage Access. Its notification shows live progress, for example "YouTube · 8 of 15 min".
+- After *N minutes* of continuous use it drops a heads-up notification from the top of the screen and draws **FocusOverlay** on top of the current app: a frosted-glass pause with a breathing ring and a random quote. Music and video (YouTube, Spotify…) pause while it's up.
+- The overlay is a window, not an Activity. Android 10+ and many phone makers block background services from opening activities, but an overlay only needs "Display over other apps".
+- If "Display over other apps" is off, or the phone refuses the overlay, the heads-up notification is the reminder on its own. Expanded, it shows the quote and an **I'm done for now** button.
+- **Random nudges** (optional): a pop-up notification with a short mindful prompt at unpredictable moments, around every *N* minutes (anywhere from half to one and a half times that). They only come while the phone is unlocked and in use.
 - The user waits a short pause (10 s by default) before **Continue anyway** unlocks. **I'm done for now** goes to the home screen.
 - Turning the screen off, or switching to an app you aren't watching, resets the timer.
 - If you don't pick any apps, it counts all phone usage. Time on the lock screen never counts.
@@ -16,7 +19,7 @@ An Android app that shows a full-screen pause with a quote about focus after you
 1. Install [Android Studio](https://developer.android.com/studio) and open this folder.
 2. Let Gradle sync. Android Studio downloads the Gradle and SDK versions it needs.
 3. Run on a real phone or an emulator (Android 8.0 or newer).
-4. In the app, grant **Usage Access** and **Display over other apps**, set your limit, then turn on **Focus reminders**. Optionally tap **Keep running in the background** and choose "Don't optimize".
+4. In the app, allow **Usage access** and **Notifications**, plus **Display over other apps** for the full-screen pause, set your limit, then turn on **Focus reminders**. Optionally tap **Run in background** and choose "Don't optimize".
 
 ### From the command line
 
@@ -28,12 +31,12 @@ export JAVA_HOME=~/.jdks/jbr-21.0.11
 ./gradlew installDebug           # install on a connected phone
 ```
 
-Tip: set the limit to `1` minute to test it quickly, or tap **Preview focus screen**.
+Tip: set the limit to `1` minute to test it quickly, or tap **Preview focus screen**. The ongoing notification shows whether the app you're in is being counted.
 
 ## Customize
 
-- Quotes: `app/src/main/res/values/quotes.xml`
-- Colors: `app/src/main/res/values/colors.xml`
+- Quotes and nudge prompts: `app/src/main/res/values/quotes.xml`
+- Colors and glass layers: `app/src/main/res/values/colors.xml`
 - Check interval: `CHECK_INTERVAL_MS` in `MonitorService.kt`
 
 ## Notes

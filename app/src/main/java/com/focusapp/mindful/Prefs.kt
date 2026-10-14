@@ -26,10 +26,25 @@ class Prefs(context: Context) {
         get() = sp.getInt("pause_seconds", 10)
         set(v) = sp.edit().putInt("pause_seconds", v.coerceIn(0, 999)).apply()
 
+    /** Pop-up nudges at random moments. */
+    var nudgesEnabled: Boolean
+        get() = sp.getBoolean("nudges_enabled", false)
+        set(v) = sp.edit().putBoolean("nudges_enabled", v).apply()
+
+    /** Average minutes between random nudges. */
+    var nudgeMinutes: Int
+        get() = sp.getInt("nudge_minutes", 60)
+        set(v) = sp.edit().putInt("nudge_minutes", v.coerceIn(5, 480)).apply()
+
     /** Apps to watch. Empty means "count all phone usage". */
     var watchedApps: Set<String>
         get() = sp.getStringSet("watched_apps", emptySet())!!.toSet()
         set(v) = sp.edit().putStringSet("watched_apps", v).apply()
+
+    /** Android only shows the notification permission dialog once or twice. */
+    var askedNotifications: Boolean
+        get() = sp.getBoolean("asked_notifications", false)
+        set(v) = sp.edit().putBoolean("asked_notifications", v).apply()
 
     /** How many times the focus screen was shown today. */
     val pausesToday: Int get() = todayCount("pauses")
@@ -73,8 +88,6 @@ object Permissions {
     }
 
     fun hasOverlay(context: Context): Boolean = Settings.canDrawOverlays(context)
-
-    fun hasAll(context: Context) = hasUsageAccess(context) && hasOverlay(context)
 
     /** Optional, but keeps aggressive battery savers from killing the monitor. */
     fun ignoresBatteryOptimization(context: Context): Boolean =

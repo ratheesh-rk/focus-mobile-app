@@ -1,0 +1,7 @@
+<resources>
+    <!-- Dark launch splash instead of the default white one -->
+    <style name="AppTheme" parent="Base.AppTheme">
+        <item name="android:windowSplashScreenBackground">@color/bg_top</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/bg_top</item>
+    </style>
+</resources>

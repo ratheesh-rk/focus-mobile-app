@@ -34,7 +34,9 @@ class AppPickerActivity : Activity() {
         prefs = Prefs(this)
         selected += prefs.watchedApps
 
+        findViewById<View>(R.id.btnBack).setOnClickListener { finish() }
         listView = findViewById(R.id.listApps)
+        listView.clipToOutline = true
         listView.adapter = adapter
         listView.setOnItemClickListener { _, _, position, _ ->
             val pkg = adapter.getItem(position).packageName

@@ -1,7 +1,25 @@
 <resources>
-    <color name="focus_bg">#101820</color>
-    <color name="focus_text">#F2EDE4</color>
-    <color name="focus_muted">#9AA5B1</color>
-    <color name="accent">#4FB3A9</color>
-    <color name="stats_bg">#1A4FB3A9</color>
+    <!-- Kept for the launcher icon -->
+    <color name="focus_bg">#0A0E1A</color>
+    <color name="focus_text">#F4F1EA</color>
+    <color name="accent">#6EE7D2</color>
+
+    <color name="bg_top">#0A0E1A</color>
+    <color name="bg_bottom">#121830</color>
+    <color name="accent_violet">#8B7CFF</color>
+    <color name="text_primary">#F4F1EA</color>
+    <color name="text_muted">#A3ABBD</color>
+    <color name="text_faint">#6B7385</color>
+    <color name="on_accent">#0A0E1A</color>
+
+    <!-- Frosted glass layers -->
+    <color name="glass_fill_top">#1FFFFFFF</color>
+    <color name="glass_fill_bottom">#0AFFFFFF</color>
+    <color name="glass_stroke">#2BFFFFFF</color>
+    <color name="glass_divider">#14FFFFFF</color>
+    <color name="glass_ripple">#33FFFFFF</color>
+
+    <!-- Tint over the app underneath the focus screen -->
+    <color name="scrim_blurred">#B30A0E1A</color>
+    <color name="scrim_solid">#F50A0E1A</color>
 </resources>

@@ -2,29 +2,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="20dp">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/glass_circle"
+        android:contentDescription="@string/back"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/picker_title"
+        android:textColor="@color/text_primary"
+        android:textSize="34sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/picker_sub"
+        android:textColor="@color/text_muted"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/glass_pill"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
         android:hint="@string/search_apps"
         android:imeOptions="actionSearch"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:singleLine="true" />
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:singleLine="true"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_faint"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/txtLoading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="24dp"
-        android:text="@string/loading_apps" />
+        android:padding="32dp"
+        android:text="@string/loading_apps"
+        android:textColor="@color/text_muted" />
 
     <ListView
         android:id="@+id/listApps"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/glass_card"
+        android:divider="@color/glass_divider"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/glass_row"
+        android:scrollbars="none" />
 </LinearLayout>

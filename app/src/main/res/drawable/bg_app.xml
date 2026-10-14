@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Deep night gradient with soft glowing orbs for the glass cards to sit on -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:angle="270"
+                android:endColor="@color/bg_bottom"
+                android:startColor="@color/bg_top" />
+        </shape>
+    </item>
+    <item
+        android:width="420dp"
+        android:height="420dp"
+        android:gravity="top|end"
+        android:right="-160dp"
+        android:top="-120dp">
+        <shape android:shape="oval">
+            <gradient
+                android:endColor="#006EE7D2"
+                android:gradientRadius="210dp"
+                android:startColor="#476EE7D2"
+                android:type="radial" />
+        </shape>
+    </item>
+    <item
+        android:width="460dp"
+        android:height="460dp"
+        android:gravity="center_vertical|start"
+        android:left="-220dp">
+        <shape android:shape="oval">
+            <gradient
+                android:endColor="#008B7CFF"
+                android:gradientRadius="230dp"
+                android:startColor="#478B7CFF"
+                android:type="radial" />
+        </shape>
+    </item>
+    <item
+        android:width="380dp"
+        android:height="380dp"
+        android:bottom="-140dp"
+        android:gravity="bottom|end"
+        android:right="-120dp">
+        <shape android:shape="oval">
+            <gradient
+                android:endColor="#00FFB86B"
+                android:gradientRadius="190dp"
+                android:startColor="#2EFFB86B"
+                android:type="radial" />
+        </shape>
+    </item>
+</layer-list>
